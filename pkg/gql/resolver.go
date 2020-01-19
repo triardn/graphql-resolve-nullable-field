@@ -1,4 +1,4 @@
-package pkg
+package gql
 
 import (
 	"database/sql"
@@ -97,7 +97,7 @@ func ResolveNullable(p graphql.ResolveParams) (result interface{}, err error) {
 		return nil, errors.New(errMsg)
 	}
 
-	result = resolveFieldValue(f)
+	result = resolveFieldValue(f.Interface())
 
 	return
 }
